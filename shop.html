@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="VELQOUR SCENTS — Timeless Elegance in Every Spray. Premium 50ml fragrances for Her and Him."><title>Shop | VELQOUR SCENTS</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="VELQOUR SCENTS logo">
+      <div class="brand-text">VELQOUR<small>SCENTS</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="shipping.html">Shipping</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn menu-btn" aria-label="Menu">☰</button>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">🛍;</button><span class="cart-count" data-cart-count>0</span>
+    </div>
+  </div>
+</header>
+<div class="backdrop" id="backdrop" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head"><h3>YOUR CART</h3><button class="icon-btn" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="summary-row"><span>Subtotal</span><b data-subtotal>Rs. 0</b></div>
+    <div class="summary-row"><span>Delivery</span><b data-shipping>Rs. 0</b></div>
+    <div class="summary-row summary-total"><span>Total</span><b data-total>Rs. 0</b></div>
+    <button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<main><section class="page-hero"><div class="container reveal"><div class="eyebrow">VELQOUR SCENTS</div><h1>THE <span class="gold">COLLECTION</span></h1><p class="muted" style="max-width:620px;margin-top:20px">Two signature 50ml fragrances. One unmistakable VELQOUR identity.</p></div></section>
+<section class="section cream"><div class="container"><div class="products"><article class="card reveal"><div class="card-img"><img src="assets/female-bottle.jpg" alt="ONLY MINE perfume"></div>
+    <div class="card-body"><div class="pill">For Her • 50ml</div><div class="card-title">ONLY MINE</div>
+    <div class="price"><span class="old">Rs. 4,286</span><span class="new">Rs. 3,000</span><span class="pill" style="margin:0">30% OFF</span></div>
+    <div class="card-actions"><a class="btn outline" href="product-mine.html">View Product</a><button class="btn" onclick="addToCart('mine')">Add to Cart</button></div></div></article><article class="card reveal"><div class="card-img"><img src="assets/male-bottle.jpg" alt="ONLY YOUR perfume"></div>
+    <div class="card-body"><div class="pill">For Him • 50ml</div><div class="card-title">ONLY YOUR</div>
+    <div class="price"><span class="old">Rs. 3,571</span><span class="new">Rs. 2,500</span><span class="pill" style="margin:0">30% OFF</span></div>
+    <div class="card-actions"><a class="btn outline" href="product-your.html">View Product</a><button class="btn" onclick="addToCart('your')">Add to Cart</button></div></div></article></div></div></section></main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="brand"><img src="assets/logo.jpg" alt="VELQOUR SCENTS"><div class="brand-text">VELQOUR<small>SCENTS</small></div></div>
+      <p style="margin-top:18px;max-width:330px">Timeless elegance in every spray. A refined fragrance house built around confidence, identity and modern luxury.</p>
+    </div>
+    <div><h4>Explore</h4><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About Us</a></div>
+    <div><h4>Help</h4><a href="shipping.html">Shipping & Policies</a><a href="contact.html">Contact</a><a href="checkout.html">Checkout</a></div>
+    <div><h4>Connect</h4><a href="https://wa.me/923132413207" target="_blank">WhatsApp</a><a href="mailto:velqourscents@gmail.com">Email</a><a href="https://instagram.com/velqourscents.pk" target="_blank">Instagram</a><a href="https://facebook.com/velqourscents.pk" target="_blank">Facebook</a><a href="https://tiktok.com/@velqourscents.pk" target="_blank">TikTok</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 VELQOUR SCENTS. All Rights Reserved.</span><span>velqourscents.store</span></div>
+</footer>
+<script src="script.js"></script>
+</body></html>

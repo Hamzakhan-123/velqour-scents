@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="VELQOUR SCENTS — Timeless Elegance in Every Spray. Premium 50ml fragrances for Her and Him."><title>ONLY YOUR | VELQOUR SCENTS</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="VELQOUR SCENTS logo">
+      <div class="brand-text">VELQOUR<small>SCENTS</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="shipping.html">Shipping</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn menu-btn" aria-label="Menu">☰</button>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">🛍;</button><span class="cart-count" data-cart-count>0</span>
+    </div>
+  </div>
+</header>
+<div class="backdrop" id="backdrop" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head"><h3>YOUR CART</h3><button class="icon-btn" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="summary-row"><span>Subtotal</span><b data-subtotal>Rs. 0</b></div>
+    <div class="summary-row"><span>Delivery</span><b data-shipping>Rs. 0</b></div>
+    <div class="summary-row summary-total"><span>Total</span><b data-total>Rs. 0</b></div>
+    <button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<main><section class="page-hero"><div class="container"><div class="eyebrow">For Him • 50ML</div><h1>ONLY YOUR</h1></div></section>
+<section class="section dark"><div class="container product-detail"><div class="reveal"><div class="product-main"><img id="mainProductImage" src="assets/male-bottle.jpg" alt="ONLY YOUR perfume"></div><div class="thumbs"><div class="thumb active" onclick="switchImg(this, 'assets/male-bottle.jpg')"><img src="assets/male-bottle.jpg" alt="ONLY YOUR view"></div><div class="thumb " onclick="switchImg(this, 'assets/male-box.jpg')"><img src="assets/male-box.jpg" alt="ONLY YOUR view"></div><div class="thumb " onclick="switchImg(this, 'assets/female-hero.jpg')"><img src="assets/female-hero.jpg" alt="ONLY YOUR view"></div></div></div>
+<div class="detail-copy reveal"><div class="eyebrow">For Him</div><h2>ONLY YOUR</h2><div class="pill">30% OFF • 50ML</div>
+<div class="price"><span class="old">Rs. 3,571</span><span class="new">Rs. 2,500</span></div><p>A refined masculine fragrance built around a fresh opening, a smooth floral heart and a warm, elegant dry-down. Designed for a confident signature that feels polished from day to night.</p>
+<div class="notes"><div class="note"><span>Top Notes</span><strong>Fresh Citrus & Juicy Fruity Notes</strong></div><div class="note"><span>Heart Notes</span><strong>Peony, Floral & Soft Rose Accords</strong></div><div class="note"><span>Base Notes</span><strong>Musk, Amber & Soft Woody Notes</strong></div></div>
+<div class="detail-meta"><div class="meta-box"><span>Size</span><b>50ml / 1.7 FL.OZ.</b></div><div class="meta-box"><span>Delivery</span><b>All Pakistan • Rs. 250</b></div></div>
+<div class="qty"><button onclick="changeProductQty(-1)">−</button><span id="productQty">1</span><button onclick="changeProductQty(1)">+</button></div>
+<button class="btn" style="width:100%" onclick="addToCart('your', Number(document.querySelector('#productQty').textContent))">Add to Cart</button></div></div></section></main>
+<script>function switchImg(el,src){document.querySelector('#mainProductImage').src=src;document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));el.classList.add('active')}function changeProductQty(d){let x=document.querySelector('#productQty');x.textContent=Math.max(1,Number(x.textContent)+d)}</script>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="brand"><img src="assets/logo.jpg" alt="VELQOUR SCENTS"><div class="brand-text">VELQOUR<small>SCENTS</small></div></div>
+      <p style="margin-top:18px;max-width:330px">Timeless elegance in every spray. A refined fragrance house built around confidence, identity and modern luxury.</p>
+    </div>
+    <div><h4>Explore</h4><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About Us</a></div>
+    <div><h4>Help</h4><a href="shipping.html">Shipping & Policies</a><a href="contact.html">Contact</a><a href="checkout.html">Checkout</a></div>
+    <div><h4>Connect</h4><a href="https://wa.me/923132413207" target="_blank">WhatsApp</a><a href="mailto:velqourscents@gmail.com">Email</a><a href="https://instagram.com/velqourscents.pk" target="_blank">Instagram</a><a href="https://facebook.com/velqourscents.pk" target="_blank">Facebook</a><a href="https://tiktok.com/@velqourscents.pk" target="_blank">TikTok</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 VELQOUR SCENTS. All Rights Reserved.</span><span>velqourscents.store</span></div>
+</footer>
+<script src="script.js"></script>
+</body></html>
