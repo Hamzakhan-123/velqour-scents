@@ -1,55 +1,310 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="VELQOUR SCENTS — Timeless Elegance in Every Spray. Premium 50ml fragrances for Her and Him."><title>Checkout | VELQOUR SCENTS</title><link rel="stylesheet" href="style.css"></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="description" content="Complete your VELQOUR SCENTS perfume order securely. Choose your payment method and provide delivery details across Pakistan.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Checkout | VELQOUR SCENTS</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <header class="site-header">
   <div class="container nav">
+
     <a class="brand" href="index.html">
       <img src="assets/logo.jpg" alt="VELQOUR SCENTS logo">
       <div class="brand-text">VELQOUR<small>SCENTS</small></div>
     </a>
+
     <nav class="nav-links">
-      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="shipping.html">Shipping</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="contact.html">Contact</a>
     </nav>
+
     <div class="nav-actions">
       <button class="icon-btn menu-btn" aria-label="Menu">☰</button>
-      <button class="icon-btn" onclick="openCart()" aria-label="Cart">🛍;</button><span class="cart-count" data-cart-count>0</span>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">🛍;</button>
+      <span class="cart-count" data-cart-count>0</span>
     </div>
+
   </div>
 </header>
+
 <div class="backdrop" id="backdrop" onclick="closeCart()"></div>
+
 <aside class="cart-panel" id="cartPanel">
-  <div class="cart-head"><h3>YOUR CART</h3><button class="icon-btn" onclick="closeCart()">×</button></div>
+  <div class="cart-head">
+    <h3>YOUR CART</h3>
+    <button class="icon-btn" onclick="closeCart()">×</button>
+  </div>
+
   <div class="cart-items" id="cartItems"></div>
+
   <div class="cart-foot">
-    <div class="summary-row"><span>Subtotal</span><b data-subtotal>Rs. 0</b></div>
-    <div class="summary-row"><span>Delivery</span><b data-shipping>Rs. 0</b></div>
-    <div class="summary-row summary-total"><span>Total</span><b data-total>Rs. 0</b></div>
-    <button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">Proceed to Checkout</button>
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <b data-subtotal>Rs. 0</b>
+    </div>
+
+    <div class="summary-row">
+      <span>Delivery</span>
+      <b data-shipping>Rs. 0</b>
+    </div>
+
+    <div class="summary-row summary-total">
+      <span>Total</span>
+      <b data-total>Rs. 0</b>
+    </div>
+
+    <button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">
+      Proceed to Checkout
+    </button>
   </div>
 </aside>
+
 <div class="toast" id="toast"></div>
 
-<main><section class="page-hero"><div class="container"><div class="eyebrow">ORDER DETAILS</div><h1>CHECK<span class="gold">OUT</span></h1></div></section>
-<section class="section dark"><div class="container split" style="align-items:start"><form id="checkoutForm" class="contact-card reveal"><div class="eyebrow">DELIVERY DETAILS</div>
-<div class="form-grid"><div class="field"><label>Full Name *</label><input required name="name"></div><div class="field"><label>Mobile Number *</label><input required name="phone"></div>
-<div class="field"><label>Email</label><input type="email" name="email"></div><div class="field"><label>City *</label><input required name="city"></div>
-<div class="field"><label>Province *</label><select required name="province"><option value="">Select</option><option>Punjab</option><option>Sindh</option><option>Khyber Pakhtunkhwa</option><option>Balochistan</option><option>Islamabad Capital Territory</option><option>Gilgit-Baltistan</option><option>Azad Jammu & Kashmir</option></select></div><div class="field"><label>Postal Code</label><input name="postal"></div>
-<div class="field full"><label>Complete Address *</label><textarea required name="address"></textarea></div><div class="field full"><label>Order Notes</label><textarea name="notes"></textarea></div></div>
-<div class="payment"><div class="eyebrow">PAYMENT METHOD</div><label><input type="radio" name="payment" value="Cash on Delivery" data-payment checked> Cash on Delivery</label>
-<label><input type="radio" name="payment" value="Bank Transfer" data-payment> Bank Transfer</label><label><input type="radio" name="payment" value="Easypaisa" data-payment> Easypaisa</label>
-<label><input type="radio" name="payment" value="JazzCash" data-payment> JazzCash</label><label><input type="radio" name="payment" value="Card Payment" data-payment> Card Payment (Safepay)</label>
-<div class="payment-info" id="paymentInfo">Pay when your VELQOUR order arrives. Delivery charges: Rs. 250.</div></div><button class="btn" style="width:100%" id="placeOrderBtn">Place Order</button>
-<p class="muted" style="font-size:10px;margin-top:10px">COD/manual payments open WhatsApp. Card Payment opens Safepay Checkout when the secure backend is configured.</p></form>
-<div class="order-summary reveal"><div class="eyebrow">YOUR ORDER</div><div id="checkoutItems"></div><div class="summary-row"><span>Subtotal</span><b data-subtotal>Rs. 0</b></div><div class="summary-row"><span>Delivery</span><b data-shipping>Rs. 250</b></div><div class="summary-row summary-total"><span>Total</span><b data-total>Rs. 0</b></div></div></div></section></main>
-<script>document.addEventListener("DOMContentLoaded",()=>{const b=document.querySelector("#checkoutItems");if(!cart.length){b.innerHTML='<p class="muted">Your cart is empty. <a class="gold" href="shop.html">Shop now</a>.</p>';return;}b.innerHTML=cart.map(i=>{let p=PRODUCTS[i.id];return `<div class="summary-row"><span>${p.name} × ${i.qty}</span><b>${money(p.price*i.qty)}</b></div>`}).join("");renderCart();paymentInfo();});</script>
-<footer class="footer">
-  <div class="container footer-grid">
-    <div><div class="brand"><img src="assets/logo.jpg" alt="VELQOUR SCENTS"><div class="brand-text">VELQOUR<small>SCENTS</small></div></div>
-      <p style="margin-top:18px;max-width:330px">Timeless elegance in every spray. A refined fragrance house built around confidence, identity and modern luxury.</p>
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">ORDER DETAILS</div>
+      <h1>CHECK<span class="gold">OUT</span></h1>
     </div>
-    <div><h4>Explore</h4><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About Us</a></div>
-    <div><h4>Help</h4><a href="shipping.html">Shipping & Policies</a><a href="contact.html">Contact</a><a href="checkout.html">Checkout</a></div>
-    <div><h4>Connect</h4><a href="https://wa.me/923132413207" target="_blank">WhatsApp</a><a href="mailto:velqourscents@gmail.com">Email</a><a href="https://instagram.com/velqourscents.pk" target="_blank">Instagram</a><a href="https://facebook.com/velqourscents.pk" target="_blank">Facebook</a><a href="https://tiktok.com/@velqourscents.pk" target="_blank">TikTok</a></div>
+  </section>
+
+  <section class="section dark">
+    <div class="container split" style="align-items:start">
+
+      <form id="checkoutForm" class="contact-card reveal">
+
+        <div class="eyebrow">DELIVERY DETAILS</div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label>Full Name *</label>
+            <input required name="name">
+          </div>
+
+          <div class="field">
+            <label>Mobile Number *</label>
+            <input required name="phone">
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email">
+          </div>
+
+          <div class="field">
+            <label>City *</label>
+            <input required name="city">
+          </div>
+
+          <div class="field">
+            <label>Province *</label>
+            <select required name="province">
+              <option value="">Select</option>
+              <option>Punjab</option>
+              <option>Sindh</option>
+              <option>Khyber Pakhtunkhwa</option>
+              <option>Balochistan</option>
+              <option>Islamabad Capital Territory</option>
+              <option>Gilgit-Baltistan</option>
+              <option>Azad Jammu & Kashmir</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Postal Code</label>
+            <input name="postal">
+          </div>
+
+          <div class="field full">
+            <label>Complete Address *</label>
+            <textarea required name="address"></textarea>
+          </div>
+
+          <div class="field full">
+            <label>Order Notes</label>
+            <textarea name="notes"></textarea>
+          </div>
+
+        </div>
+
+        <div class="payment">
+
+          <div class="eyebrow">PAYMENT METHOD</div>
+
+          <label>
+            <input type="radio" name="payment" value="Cash on Delivery" data-payment checked>
+            Cash on Delivery
+          </label>
+
+          <label>
+            <input type="radio" name="payment" value="Bank Transfer" data-payment>
+            Bank Transfer
+          </label>
+
+          <label>
+            <input type="radio" name="payment" value="Easypaisa" data-payment>
+            Easypaisa
+          </label>
+
+          <label>
+            <input type="radio" name="payment" value="JazzCash" data-payment>
+            JazzCash
+          </label>
+
+          <label>
+            <input type="radio" name="payment" value="Card Payment" data-payment>
+            Card Payment (Safepay)
+          </label>
+
+          <div class="payment-info" id="paymentInfo">
+            Pay when your VELQOUR order arrives. Delivery charges: Rs. 250.
+          </div>
+
+        </div>
+
+        <button class="btn" style="width:100%" id="placeOrderBtn">
+          Place Order
+        </button>
+
+        <p class="muted" style="font-size:10px;margin-top:10px">
+          COD/manual payments open WhatsApp. Card Payment opens Safepay Checkout when the secure backend is configured.
+        </p>
+
+      </form>
+
+      <div class="order-summary reveal">
+
+        <div class="eyebrow">YOUR ORDER</div>
+
+        <div id="checkoutItems"></div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <b data-subtotal>Rs. 0</b>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <b data-shipping>Rs. 250</b>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <b data-total>Rs. 0</b>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const b = document.querySelector("#checkoutItems");
+
+  if (!cart.length) {
+    b.innerHTML = '<p class="muted">Your cart is empty. <a class="gold" href="shop.html">Shop now</a>.</p>';
+    return;
+  }
+
+  b.innerHTML = cart.map(i => {
+    let p = PRODUCTS[i.id];
+
+    return `
+      <div class="summary-row">
+        <span>${p.name} × ${i.qty}</span>
+        <b>${money(p.price * i.qty)}</b>
+      </div>
+    `;
+  }).join("");
+
+  renderCart();
+  paymentInfo();
+
+});
+</script>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <div>
+      <div class="brand">
+        <img src="assets/logo.jpg" alt="VELQOUR SCENTS">
+        <div class="brand-text">VELQOUR<small>SCENTS</small></div>
+      </div>
+
+      <p style="margin-top:18px;max-width:330px">
+        Timeless elegance in every spray. A refined fragrance house built around confidence, identity and modern luxury.
+      </p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+    </div>
+
+    <div>
+      <h4>Help</h4>
+      <a href="shipping.html">Shipping & Policies</a>
+      <a href="contact.html">Contact</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+
+      <a href="https://wa.me/923132413207" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+
+      <a href="mailto:velqourscents@gmail.com">
+        Email
+      </a>
+
+      <a href="https://instagram.com/velqourscents.pk" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+
+      <a href="https://facebook.com/velqourscents.pk" target="_blank" rel="noopener noreferrer">
+        Facebook
+      </a>
+
+      <a href="https://tiktok.com/@velqourscents.pk" target="_blank" rel="noopener noreferrer">
+        TikTok
+      </a>
+    </div>
+
   </div>
-  <div class="container footer-bottom"><span>© 2026 VELQOUR SCENTS. All Rights Reserved.</span><span>velqourscents.store</span></div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 VELQOUR SCENTS. All Rights Reserved.</span>
+    <span>velqourscents.store</span>
+  </div>
+
 </footer>
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+</html>
